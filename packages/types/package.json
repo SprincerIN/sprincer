@@ -1,0 +1,29 @@
+{
+  "name": "@sprincer/types",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Sprincer shared types and Eden clients",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./eden": {
+      "types": "./src/eden/index.ts",
+      "default": "./src/eden/index.ts"
+    }
+  },
+  "scripts": {
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@elysiajs/eden": "^1.3.0"
+  },
+  "devDependencies": {
+    "@sprincer/config": "workspace:*",
+    "@types/bun": "^1.2.5",
+    "typescript": "^5.8.2"
+  }
+}

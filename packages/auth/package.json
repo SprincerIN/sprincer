@@ -1,0 +1,30 @@
+{
+  "name": "@sprincer/auth",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Sprincer authentication - BetterAuth setup",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./client": {
+      "types": "./src/client.ts",
+      "default": "./src/client.ts"
+    }
+  },
+  "scripts": {
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@sprincer/db": "workspace:*",
+    "better-auth": "^1.2.7"
+  },
+  "devDependencies": {
+    "@sprincer/config": "workspace:*",
+    "@types/bun": "^1.2.5",
+    "typescript": "^5.8.2"
+  }
+}

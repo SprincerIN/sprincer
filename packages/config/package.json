@@ -1,0 +1,43 @@
+{
+  "name": "@sprincer/config",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Sprincer shared ESLint, TypeScript, and Tailwind configurations",
+  "type": "module",
+  "exports": {
+    "./eslint": {
+      "types": "./eslint/index.d.ts",
+      "default": "./eslint/index.js"
+    },
+    "./typescript/base": {
+      "default": "./typescript/base.json"
+    },
+    "./typescript/angular": {
+      "default": "./typescript/angular.json"
+    },
+    "./typescript/node": {
+      "default": "./typescript/node.json"
+    },
+    "./tailwind": {
+      "types": "./tailwind/index.d.ts",
+      "default": "./tailwind/index.js"
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@eslint/js": "^9.22.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "globals": "^16.0.0",
+    "tailwindcss": "^4.0.14",
+    "typescript-eslint": "^8.26.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.5",
+    "@types/eslint__js": "^8.42.3",
+    "eslint": "^9.22.0",
+    "typescript": "^5.8.2"
+  }
+}

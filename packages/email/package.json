@@ -1,0 +1,35 @@
+{
+  "name": "@sprincer/email",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Sprincer email templates",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./templates": {
+      "types": "./src/templates/index.ts",
+      "default": "./src/templates/index.ts"
+    }
+  },
+  "scripts": {
+    "dev": "email dev",
+    "build": "tsup src/index.ts --format esm --dts",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@react-email/components": "^0.0.36",
+    "react": "^19.0.0",
+    "react-email": "^4.0.3"
+  },
+  "devDependencies": {
+    "@sprincer/config": "workspace:*",
+    "@types/bun": "^1.2.5",
+    "@types/react": "^19.0.10",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2"
+  }
+}

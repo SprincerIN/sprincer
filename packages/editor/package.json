@@ -1,0 +1,33 @@
+{
+  "name": "@sprincer/editor",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Sprincer editor - BlockNote custom blocks",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./blocks": {
+      "types": "./src/blocks/index.ts",
+      "default": "./src/blocks/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts",
+    "dev": "tsup src/index.ts --format esm --dts --watch",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@blocknote/core": "^0.23.1",
+    "@blocknote/react": "^0.23.1"
+  },
+  "devDependencies": {
+    "@sprincer/config": "workspace:*",
+    "@types/bun": "^1.2.5",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2"
+  }
+}
