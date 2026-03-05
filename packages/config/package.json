@@ -21,7 +21,8 @@
     "./tailwind": {
       "types": "./tailwind/index.d.ts",
       "default": "./tailwind/index.js"
-    }
+    },
+    "./tailwind/tokens.css": "./tailwind/tokens.css"
   },
   "scripts": {
     "lint": "eslint .",

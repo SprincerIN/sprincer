@@ -23,6 +23,8 @@
   },
   "devDependencies": {
     "@sprincer/config": "workspace:*",
+    "@sprincer/core-api": "workspace:*",
+    "@sprincer/web-bff": "workspace:*",
     "@types/bun": "^1.2.5",
     "typescript": "^5.8.2"
   }

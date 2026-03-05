@@ -38,9 +38,13 @@
         "@angular/forms": "^21.0.0",
         "@angular/platform-browser": "^21.0.0",
         "@angular/platform-browser-dynamic": "^21.0.0",
+        "@angular/platform-server": "^21.0.0",
         "@angular/router": "^21.0.0",
+        "@angular/service-worker": "^21.0.0",
+        "@angular/ssr": "^21.2.0",
         "@sprincer/types": "workspace:*",
         "@sprincer/ui-cdk": "workspace:*",
+        "express": "^4.18.0",
         "rxjs": "^7.8.1",
         "tslib": "^2.8.1",
         "zone.js": "^0.15.0",
@@ -50,7 +54,9 @@
         "@angular/cli": "^21.0.0",
         "@angular/compiler-cli": "^21.0.0",
         "@sprincer/config": "workspace:*",
+        "@types/express": "^4.17.21",
         "@types/node": "^22.13.9",
+        "tailwindcss": "^4.0.14",
         "typescript": "^5.8.2",
       },
     },
@@ -152,6 +158,8 @@
       },
       "devDependencies": {
         "@sprincer/config": "workspace:*",
+        "@sprincer/core-api": "workspace:*",
+        "@sprincer/web-bff": "workspace:*",
         "@types/bun": "^1.2.5",
         "typescript": "^5.8.2",
       },
@@ -253,7 +261,13 @@
 
     "@angular/platform-browser-dynamic": ["@angular/platform-browser-dynamic@21.2.1", "", { "dependencies": { "tslib": "^2.3.0" }, "peerDependencies": { "@angular/common": "21.2.1", "@angular/compiler": "21.2.1", "@angular/core": "21.2.1", "@angular/platform-browser": "21.2.1" } }, "sha512-J4KnrXjgSuk7KjEm79/RK1yyzR867sIyT5mcG6jx2KmkjspFJd4OeOux7Oj7lSBM7+nDEsKC9F6s0x3dC0hCPQ=="],
 
+    "@angular/platform-server": ["@angular/platform-server@21.2.1", "", { "dependencies": { "tslib": "^2.3.0", "xhr2": "^0.2.0" }, "peerDependencies": { "@angular/common": "21.2.1", "@angular/compiler": "21.2.1", "@angular/core": "21.2.1", "@angular/platform-browser": "21.2.1", "rxjs": "^6.5.3 || ^7.4.0" } }, "sha512-ezIY3hKl98JIjQcy+wq+38w9ln2bplQ8HFpEsaYySjPPu5TYCQ/z8HFxpvgqK80SVfvE7ijbgY+ALzKCE30Fjg=="],
+
     "@angular/router": ["@angular/router@21.2.1", "", { "dependencies": { "tslib": "^2.3.0" }, "peerDependencies": { "@angular/common": "21.2.1", "@angular/core": "21.2.1", "@angular/platform-browser": "21.2.1", "rxjs": "^6.5.3 || ^7.4.0" } }, "sha512-FUKG+8ImQYxmlDUdAs7+VeS/VrBNrbo0zGiKkzVNU/bbcCyroKXJLXFtkFI3qmROiJNyIta2IMBCHJvIjLIMig=="],
+
+    "@angular/service-worker": ["@angular/service-worker@21.2.1", "", { "dependencies": { "tslib": "^2.3.0" }, "peerDependencies": { "@angular/core": "21.2.1", "rxjs": "^6.5.3 || ^7.4.0" }, "bin": { "ngsw-config": "ngsw-config.js" } }, "sha512-mFyEVh5KazB6wr9uoXhlDQQDaicH9/t2m6lsN+/t2y6iMPpTIuTbWYHXX1uVbLKcxne54ei78NgD3wNS7DMfmg=="],
+
+    "@angular/ssr": ["@angular/ssr@21.2.0", "", { "dependencies": { "tslib": "^2.3.0" }, "peerDependencies": { "@angular/common": "^21.0.0", "@angular/core": "^21.0.0", "@angular/platform-server": "^21.0.0", "@angular/router": "^21.0.0" }, "optionalPeers": ["@angular/platform-server"] }, "sha512-NqtCNJETO1ocQ0F3pK4KxkoDkPxI2qN2YPEBLPAGTrLXxTb6vM06LwYa6tTwFm0sk26tfOGTuauJV1KhRnDcVQ=="],
 
     "@babel/code-frame": ["@babel/code-frame@7.29.0", "", { "dependencies": { "@babel/helper-validator-identifier": "^7.28.5", "js-tokens": "^4.0.0", "picocolors": "^1.1.1" } }, "sha512-9NhCeYjq9+3uxgdtp20LSiJXJvN0FeCtNGpJxuMFZ1Kv3cWUNb6DOhJwUvcVCzKGR66cw4njwM6hrJLqgOwbcw=="],
 
@@ -2702,6 +2716,8 @@
     "ws": ["ws@8.19.0", "", { "peerDependencies": { "bufferutil": "^4.0.1", "utf-8-validate": ">=5.0.2" }, "optionalPeers": ["bufferutil", "utf-8-validate"] }, "sha512-blAT2mjOEIi0ZzruJfIhb3nps74PRWTCz1IjglWEEpQl5XS/UNama6u2/rjFkDDouqr4L67ry+1aGIALViWjDg=="],
 
     "wsl-utils": ["wsl-utils@0.3.1", "", { "dependencies": { "is-wsl": "^3.1.0", "powershell-utils": "^0.1.0" } }, "sha512-g/eziiSUNBSsdDJtCLB8bdYEUMj4jR7AGeUo96p/3dTafgjHhpF4RiCFPiRILwjQoDXx5MqkBr4fwWtR3Ky4Wg=="],
+
+    "xhr2": ["xhr2@0.2.1", "", {}, "sha512-sID0rrVCqkVNUn8t6xuv9+6FViXjUVXq8H5rWOH2rz9fDNQEd4g0EA2XlcEdJXRz5BMEn4O1pJFdT+z4YHhoWw=="],
 
     "y-prosemirror": ["y-prosemirror@1.2.13", "", { "dependencies": { "lib0": "^0.2.42" }, "peerDependencies": { "prosemirror-model": "^1.7.1", "prosemirror-state": "^1.2.3", "prosemirror-view": "^1.9.10", "y-protocols": "^1.0.1", "yjs": "^13.5.38" } }, "sha512-eW5/rJcYhqlrqyPLTaGIaPSt7YS6f2wwbV5wXlUkY8rERY0tSJPoumsPD7UWwtXk9C5TdTsvwaIrdOoD1QLbYA=="],
 

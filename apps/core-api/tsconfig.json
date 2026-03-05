@@ -1,0 +1,15 @@
+{
+  "extends": "@sprincer/config/typescript/node",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "paths": {
+      "@routes/*": ["./src/routes/*"],
+      "@services/*": ["./src/services/*"],
+      "@jobs/*": ["./src/jobs/*"],
+      "@realtime/*": ["./src/realtime/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

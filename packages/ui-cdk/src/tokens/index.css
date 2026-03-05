@@ -1,0 +1,2 @@
+/* Re-exports tokens from @sprincer/config */
+@import "../../node_modules/@sprincer/config/tailwind/tokens.css";

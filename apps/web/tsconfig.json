@@ -1,0 +1,19 @@
+{
+  "extends": "@sprincer/config/typescript/angular",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "dist",
+    "baseUrl": "src",
+    "paths": {
+      "@app/*": ["app/*"],
+      "@pages/*": ["app/pages/*"],
+      "@components/*": ["app/shared/components/*"],
+      "@services/*": ["app/shared/services/*"],
+      "@guards/*": ["app/shared/guards/*"],
+      "@resources/*": ["app/resources/*"],
+      "@models/*": ["app/models/*"]
+    }
+  },
+  "include": ["src/**/*", "server.ts"],
+  "exclude": ["node_modules", "dist", "**/*.spec.ts"]
+}

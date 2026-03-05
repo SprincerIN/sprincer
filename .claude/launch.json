@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "core-api",
+      "runtimeExecutable": "bun",
+      "runtimeArgs": ["run", "--filter", "@sprincer/core-api", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "web-bff",
+      "runtimeExecutable": "bun",
+      "runtimeArgs": ["run", "--filter", "@sprincer/web-bff", "dev"],
+      "port": 3001
+    },
+    {
+      "name": "web",
+      "runtimeExecutable": "bun",
+      "runtimeArgs": ["run", "--filter", "@sprincer/web", "dev"],
+      "port": 3200
+    }
+  ]
+}
